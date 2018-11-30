@@ -1,0 +1,10 @@
+---
+# Sometimes you just want to know if all the hosts are accessible before 
+# running long complicated playbooks. Disable fact gathering and just ping the 
+# host to make sure all the plumbing is operational.
+
+- hosts: all
+  gather_facts: no
+  tasks:
+  - name: Ping all hosts
+    ping:
